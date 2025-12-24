@@ -91,21 +91,15 @@ function mockAnalyzeMessage(text: string): AIAnalysis {
     const words = text.split(/\s+/).filter(w => w.length > 3);
     const keywords = words.slice(0, 5);
 
-    // Suggested action and auto response
+    // Suggested action
     let suggestedAction = 'Qeydə alın';
-    let autoResponse = '';
 
     if (sentiment === 'positive') {
         suggestedAction = 'Təşəkkür mesajı göndərin';
-        autoResponse = 'Hörmətli müştərimiz, müsbət rəyiniz üçün təşəkkür edirik! Sizə xidmət etməkdən məmnunuq. 🙏';
     } else if (sentiment === 'negative' && priority === 'high') {
         suggestedAction = 'Dərhal Call Center-ə yönləndirin';
-        autoResponse = 'Hörmətli müştərimiz, narazılığınız üçün üzr istəyirik. Mütəxəssisimiz tezliklə sizinlə əlaqə saxlayacaq. 📞';
     } else if (sentiment === 'negative') {
         suggestedAction = 'Departamenta bildirilsin';
-        autoResponse = 'Hörmətli müştərimiz, rəyiniz üçün təşəkkür edirik. Problemi araşdırıb sizə geri dönəcəyik. 📝';
-    } else {
-        autoResponse = 'Hörmətli müştərimiz, rəyiniz üçün təşəkkür edirik. Fikrinizi nəzərə alacağıq! 👍';
     }
 
     return {

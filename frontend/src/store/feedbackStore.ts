@@ -15,7 +15,7 @@ interface FeedbackStore {
     updateFeedback: (feedback: Feedback) => void;
 }
 
-export const useFeedbackStore = create<FeedbackStore>((set, get) => ({
+export const useFeedbackStore = create<FeedbackStore>((set) => ({
     feedbacks: [],
     stats: null,
     loading: false,

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Box, Card, CardContent, Typography, Grid, Button, Chip } from '@mui/material';
 import { QRCodeSVG } from 'qrcode.react';
 import { WhatsApp as WhatsAppIcon, Telegram as TelegramIcon } from '@mui/icons-material';

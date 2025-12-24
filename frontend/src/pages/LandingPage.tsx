@@ -11,7 +11,6 @@ import {
     Chip,
     Avatar,
     IconButton,
-    useTheme,
     alpha,
     Snackbar,
     Alert,
@@ -28,9 +27,8 @@ import {
     CheckCircle as CheckIcon,
     LocationOn as LocationIcon,
     Email as EmailIcon,
-    Phone as PhoneIcon,
 } from '@mui/icons-material';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 const MotionBox = motion(Box);
@@ -116,10 +114,7 @@ const stats = [
 ];
 
 export default function LandingPage() {
-    const theme = useTheme();
     const navigate = useNavigate();
-    const { scrollYProgress } = useScroll();
-    const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');

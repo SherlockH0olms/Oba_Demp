@@ -1,6 +1,7 @@
 // TypeScript Types for OBA CRM
 
 export interface Customer {
+    id?: string;
     name: string;
     phone?: string;
     chatId?: string;

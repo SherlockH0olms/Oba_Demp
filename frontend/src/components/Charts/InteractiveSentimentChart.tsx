@@ -157,7 +157,7 @@ export default function InteractiveSentimentChart({ data }: InteractiveSentiment
                         </defs>
 
                         {/* Vertical dashed lines */}
-                        {chartData.map((d, i) => (
+                        {chartData.map((_, i) => (
                             <line
                                 key={i}
                                 x1={getX(i)}

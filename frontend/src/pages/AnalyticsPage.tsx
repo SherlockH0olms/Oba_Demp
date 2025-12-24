@@ -170,7 +170,7 @@ export default function AnalyticsPage() {
                                             dataKey="value"
                                             fill={theme.palette.primary.main}
                                             radius={[0, 6, 6, 0]}
-                                            background={{ fill: alpha(theme.palette.primary.main, 0.1), radius: [0, 6, 6, 0] }}
+                                            background={{ fill: alpha(theme.palette.primary.main, 0.1) }}
                                         />
                                     </BarChart>
                                 </ResponsiveContainer>

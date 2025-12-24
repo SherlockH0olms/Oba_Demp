@@ -40,7 +40,7 @@ export default function AnimatedBarChart({
             scaleY: 1,
             transition: {
                 delay: i * 0.05,
-                type: 'spring',
+                type: 'spring' as const,
                 stiffness: 80,
                 damping: 12,
             },

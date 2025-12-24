@@ -26,7 +26,6 @@ export default function EmojiRating({ onChange, value = 0, label = 'Qiymətlənd
     };
 
     const displayRating = hoverRating || rating;
-    const activeData = displayRating > 0 ? ratingData[displayRating - 1] : null;
 
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>

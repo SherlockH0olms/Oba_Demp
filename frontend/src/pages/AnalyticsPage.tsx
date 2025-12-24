@@ -75,12 +75,12 @@ export default function AnalyticsPage() {
     };
 
     const sentimentData = [
-        { name: 'Müsbət', value: stats.sentiment.positive, color: theme.palette.success.main },
-        { name: 'Neytral', value: stats.sentiment.neutral, color: theme.palette.warning.main },
-        { name: 'Mənfi', value: stats.sentiment.negative, color: theme.palette.error.main },
+        { name: 'Müsbət', value: stats?.sentiment?.positive || 0, color: theme.palette.success.main },
+        { name: 'Neytral', value: stats?.sentiment?.neutral || 0, color: theme.palette.warning.main },
+        { name: 'Mənfi', value: stats?.sentiment?.negative || 0, color: theme.palette.error.main },
     ];
 
-    const departmentData = Object.entries(stats.departments).map(([name, value]) => ({
+    const departmentData = Object.entries(stats?.departments || {}).map(([name, value]) => ({
         name,
         value,
     }));

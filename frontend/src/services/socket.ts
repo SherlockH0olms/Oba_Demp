@@ -1,7 +1,9 @@
 import { io, Socket } from 'socket.io-client';
 import type { Feedback, CallCenterTicket, Survey } from '../types';
 
-const SOCKET_URL = 'http://localhost:5000';
+const SOCKET_URL = typeof window !== 'undefined' && window.location.hostname === 'localhost'
+    ? 'http://localhost:5000'
+    : (typeof window !== 'undefined' ? window.location.origin : '');
 
 class SocketService {
     private socket: Socket | null = null;

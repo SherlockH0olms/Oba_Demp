@@ -23,7 +23,7 @@ export default function SentimentChart({ data }: SentimentChartProps) {
         return date.toLocaleDateString('az-AZ', { day: 'numeric', month: 'short' });
     };
 
-    const chartData = data.map(item => ({
+    const chartData = (data || []).map(item => ({
         ...item,
         date: formatDate(item.date),
     }));

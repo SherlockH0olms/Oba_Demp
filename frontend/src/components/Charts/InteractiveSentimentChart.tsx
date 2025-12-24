@@ -7,7 +7,7 @@ interface InteractiveSentimentChartProps {
     data: DailyTrend[];
 }
 
-export default function InteractiveSentimentChart({ data }: InteractiveSentimentChartProps) {
+export default function InteractiveSentimentChart({ data = [] }: InteractiveSentimentChartProps) {
     const theme = useTheme();
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -17,7 +17,7 @@ export default function InteractiveSentimentChart({ data }: InteractiveSentiment
 
     // Prepare chart data
     const chartData = useMemo(() => {
-        if (!data.length) return [];
+        if (!Array.isArray(data) || !data.length) return [];
         return data.map((d, i) => ({
             ...d,
             total: d.positive + d.neutral + d.negative,

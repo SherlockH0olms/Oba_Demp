@@ -25,9 +25,9 @@ export const useFeedbackStore = create<FeedbackStore>((set) => ({
         set({ loading: true, error: null });
         try {
             const response = await feedbacksApi.getAll();
-            set({ feedbacks: response.data, loading: false });
+            set({ feedbacks: response.data || [], loading: false });
         } catch (error) {
-            set({ error: 'Failed to fetch feedbacks', loading: false });
+            set({ feedbacks: [], error: 'Failed to fetch feedbacks', loading: false });
         }
     },
 
@@ -78,9 +78,9 @@ export const useCallCenterStore = create<CallCenterStore>((set) => ({
         set({ loading: true, error: null });
         try {
             const response = await callCenterApi.getTickets();
-            set({ tickets: response.data, loading: false });
+            set({ tickets: response.data || [], loading: false });
         } catch (error) {
-            set({ error: 'Failed to fetch tickets', loading: false });
+            set({ tickets: [], error: 'Failed to fetch tickets', loading: false });
         }
     },
 

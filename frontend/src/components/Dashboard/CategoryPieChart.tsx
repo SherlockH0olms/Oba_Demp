@@ -42,11 +42,11 @@ const COLORS = [
     '#E91E63', '#3F51B5', '#009688', '#FF5722'
 ];
 
-export default function CategoryPieChart({ categories }: CategoryPieChartProps) {
+export default function CategoryPieChart({ categories = {} }: CategoryPieChartProps) {
     const theme = useTheme();
 
-    // Use mock data if categories is empty
-    const categoryData = Object.keys(categories).length > 0 ? categories : mockCategories;
+    // Use mock data if categories is empty or falsy
+    const categoryData = categories && Object.keys(categories).length > 0 ? categories : mockCategories;
 
     const data = Object.entries(categoryData).map(([key, value]) => ({
         name: categoryLabels[key] || key,

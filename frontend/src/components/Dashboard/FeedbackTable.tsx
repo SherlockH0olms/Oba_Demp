@@ -162,11 +162,11 @@ const mockFeedbacks: Feedback[] = [
     },
 ];
 
-export default function FeedbackTable({ feedbacks, onView }: FeedbackTableProps) {
+export default function FeedbackTable({ feedbacks = [], onView }: FeedbackTableProps) {
     const theme = useTheme();
 
-    // Use mock data if feedbacks is empty
-    const displayFeedbacks = feedbacks.length > 0 ? feedbacks : mockFeedbacks;
+    // Use mock data if feedbacks is empty or undefined
+    const displayFeedbacks = Array.isArray(feedbacks) && feedbacks.length > 0 ? feedbacks : mockFeedbacks;
 
     const formatDate = (dateStr: string) => {
         const date = new Date(dateStr);
